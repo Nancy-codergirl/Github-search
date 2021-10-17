@@ -7,13 +7,15 @@ import { UserComponent } from './user/user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GithubServiceService } from './github-service.service';
 import { RepositoryComponent } from './repository/repository.component';
+import { OrganisationComponent } from './organisation/organisation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     UserComponent,
-    RepositoryComponent
+    RepositoryComponent,
+    OrganisationComponent
   ],
   imports: [
     BrowserModule,

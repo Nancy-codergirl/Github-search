@@ -1,22 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubServiceService } from '../github-service.service';
 import { RepositoryComponent} from '../repository/repository.component';
-import { RepoArray } from './user';
-
+import { RepoArray } from './organisation.component.spec';
 
 @Component({
-  selector: 'app-user',
-  templateUrl: '../user.component.html',
-  styleUrls: ['./user.component.css']
+  selector: 'app-organisation',
+  templateUrl: './organisation.component.html',
+  styleUrls: ['./organisation.component.css']
 })
-export class UserComponent implements OnInit {
-
+export class OrganisationComponent implements OnInit {
+  
   title = 'Github Search';
   values = '';
   isLoading:boolean = false;
   noInput:boolean = true;
   getFetchSuccess:boolean = false;
-  NoUser:boolean = false;
+  NoOrgs:boolean = false;
   repoArrays: RepoArray[] = [];
 
   constructor(private _githubServiceService: GithubServiceService) { }
@@ -28,7 +27,7 @@ export class UserComponent implements OnInit {
   onKey(event: any) { // without type info
     this.values = event.target.value;
     this.getFetchSuccess = false;
-    this.NoUser = false;
+    this.NoOrgs = false;
     if (this.values == '') {
   			this.noInput = true;
   	} else {
@@ -38,22 +37,30 @@ export class UserComponent implements OnInit {
 
   search(userName: string): void {
   	this.getFetchSuccess = false;
-  	this.NoUser = false;
+    this.NoOrgs = false;
     userName = this.values.trim();
     if (!userName) { return; }
-    this._githubServiceService.getRepos(userName) 
+    this._githubServiceService.getOrgaRepos(userName) 
     this.isLoading = true;
-    this.fetchUser(userName);
+    this.fetchOrgs(userName);
   }
 
-  fetchUser(userName: string): void {
-    this._githubServiceService.getRepos(userName).subscribe( data => {
+  fetchOrgs(UserName: string): void {
+    this._githubServiceService.getOrgaRepos(UserName).subscribe( data => {
 		this.repoArrays = data;
-		 if (this.repoArrays == undefined || this.repoArrays && this.repoArrays.length == 0) {
-			 this.NoUser = true;
-		 } else {
-	     this.NoUser = false;
-	   };
-	})
-};
+    if (this.repoArrays == undefined || this.repoArrays && this.repoArrays.length == 0) {
+       this.NoOrgs = true;
+     } else {
+       this.NoOrgs = false;
+     };
+	});
+
+    setTimeout(() =>{
+       this.isLoading = false;
+       this.getFetchSuccess = true;
+    },bind(this),1000);
+  }
+
+
+
 }
