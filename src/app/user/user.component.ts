@@ -54,14 +54,4 @@ export class UserComponent implements OnInit {
 		 } else {
 	     this.NoUser = false;
 	   };
-	});
-
-    setTimeout(function(){
-       this.isLoading = false;
-       this.getFetchSuccess = true;
-    }.bind(this),1000);
-  }
-
-
-
-}
+	})
