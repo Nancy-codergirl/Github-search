@@ -1,6 +1,46 @@
-# GithubSearch
+# Github-Search
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
+A single page application for searching github users and repositories. The site uses the Github API to perform searches on Github, and display the results to the users.
+
+#### This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
+
+### Check out the website :stars:
+
+
+# Permissions
+- Internet
+# Task lists
+- [x] The application allows the user to able to search for both GitHub users and GitHub repositories
+- [X] The application also lists my repositories.
+
+# Technologies used.
+- Typescript
+- Bootstrap
+- Glyphicons
+- Angular js
+
+## Setup/Installation Requirements
+
+* Clone the repository and modify the files according to your requirement.
+* I highly recommend to use Github Pages to deploy the website.
+* To deploy your website, first you need to create github repository with name <your-github-username>.github.io/
+* Push the generated code to the master branch of this repository.
+
+## Known Bugs
+
+The project has no known bugs as the debugging process was quite thorough.
+
+
+# Developer or Author Name
+- Nancy Muriithi
+- Github -- Nancy-codergirl
+
+## License :link:
+* MIT License 
+
+
+
+
 
 ## Development server
 
@@ -8,7 +48,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng generate component component-name` to generate a new component.
 
 ## Build
 
