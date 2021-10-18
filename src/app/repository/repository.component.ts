@@ -9,8 +9,8 @@ import { UserComponent} from '../user/user.component';
 })
   export class RepositoryComponent implements OnInit {
 
-  	@Input() passData: any;
-	          arrayData: any;
+  	@Input() passData;
+	          arrayData;
 
  constructor() {
  }

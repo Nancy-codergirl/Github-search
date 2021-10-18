@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubServiceService } from '../github-service.service';
 import { RepositoryComponent} from '../repository/repository.component';
-import { RepoArray } from './user';
+import { RepoArray } from '../user';
 
 
 @Component({
@@ -17,7 +17,7 @@ export class UserComponent implements OnInit {
   noInput:boolean = true;
   getFetchSuccess:boolean = false;
   NoUser:boolean = false;
-  repoArrays: RepoArray[] = [];
+  repoArrays: RepoArray[];
 
   constructor(private _githubServiceService: GithubServiceService) { }
 
@@ -46,14 +46,22 @@ export class UserComponent implements OnInit {
     this.fetchUser(userName);
   }
 
-  fetchUser(userName: string): void {
-    this._githubServiceService.getRepos(userName).subscribe( data => {
+  fetchUser(UserName): void {
+    this._githubServiceService.getRepos(UserName).subscribe( data => {
 		this.repoArrays = data;
 		 if (this.repoArrays == undefined || this.repoArrays && this.repoArrays.length == 0) {
 			 this.NoUser = true;
 		 } else {
 	     this.NoUser = false;
 	   };
-	})
-};
+	});
+
+    setTimeout(function(){
+       this.isLoading = false;
+       this.getFetchSuccess = true;
+    }.bind(this),1000);
+  }
+
+
+
 }

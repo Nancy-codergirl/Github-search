@@ -16,7 +16,7 @@ export class OrganisationComponent implements OnInit {
   noInput:boolean = true;
   getFetchSuccess:boolean = false;
   NoOrgs:boolean = false;
-  repoArrays: RepoArray[] | undefined;
+  repoArrays: RepoArray[] = [];
 
   constructor(private _githubServiceService: GithubServiceService) { }
 
@@ -55,11 +55,7 @@ export class OrganisationComponent implements OnInit {
      };
 	});
 
-    setTimeout(() =>{
-       this.isLoading = false;
-       this.getFetchSuccess = true;
-    }.bind(this),1000);
-  }
+      }
 
 
 
