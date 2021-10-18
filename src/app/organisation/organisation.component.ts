@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubServiceService } from '../github-service.service';
 import { RepositoryComponent} from '../repository/repository.component';
-import { RepoArray } from './organisation.component.spec';
+import { RepoArray } from '../user/user';
 
 @Component({
   selector: 'app-organisation',
@@ -16,7 +16,7 @@ export class OrganisationComponent implements OnInit {
   noInput:boolean = true;
   getFetchSuccess:boolean = false;
   NoOrgs:boolean = false;
-  repoArrays: RepoArray[] = [];
+  repoArrays: RepoArray[] | undefined;
 
   constructor(private _githubServiceService: GithubServiceService) { }
 
@@ -58,7 +58,7 @@ export class OrganisationComponent implements OnInit {
     setTimeout(() =>{
        this.isLoading = false;
        this.getFetchSuccess = true;
-    },bind(this),1000);
+    }.bind(this),1000);
   }
 
 

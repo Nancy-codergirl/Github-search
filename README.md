@@ -16,7 +16,7 @@ A single page application for searching github users and repositories. The site 
 # Technologies used.
 - Typescript
 - Bootstrap
-- Glyphicons
+- Html
 - Angular js
 
 ## Setup/Installation Requirements
