@@ -1,6 +1,6 @@
 # Github-Search
 
-A single page application for searching github users and repositories. The site uses the Github API to perform searches on Github, and display the results to the users.
+A single page application for searching github users and repositories. The site uses the Github API to perform searches on Github, and display the results to the users.The site also has my repositories.
 
 #### This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
 
