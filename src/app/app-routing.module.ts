@@ -9,9 +9,9 @@ import { OrganisationComponent } from './organisation/organisation.component';
 
 const routes: Routes = [
   //{ path: '', pathMatch:'full', redirectTo: '/' },
-  { path: '', component: DashboardComponent    },
-  { path: 'user', component: UserComponent },
-  { path: 'organization',  component: OrganisationComponent }
+  //{ path: '', component: DashboardComponent    },
+  //{ path: 'user', component: UserComponent },
+  //{ path: 'organization',  component: OrganisationComponent }
 ];
 
 
